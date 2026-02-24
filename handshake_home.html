@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Network Hero</title>
+    <style>
+        :root {
+            --bg: #101625;
+            --panel: #141c2b;
+            --line: #2a3448;
+            --lime: #c9f24b;
+            --text: #f3f6ff;
+            --muted: #c4ccdd;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+        }
+
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 14px 18px 26px;
+        }
+
+        .nav {
+            height: 72px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+        }
+
+        .brand {
+            justify-self: start;
+            color: var(--lime);
+            font-size: 43px;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            font-weight: 700;
+            font-style: italic;
+            transform: scaleY(0.92);
+        }
+
+        .links {
+            display: flex;
+            gap: 34px;
+        }
+
+        .links a {
+            color: #eef2fb;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .actions {
+            justify-self: end;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            height: 46px;
+            padding: 0 22px;
+            border-radius: 6px;
+            font-size: 19px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: #e8edf9;
+            border: 1px solid #6f788d;
+        }
+
+        .btn-signup {
+            background: var(--lime);
+            border: 0;
+            color: #0f1727;
+        }
+
+        .hero {
+            margin-top: 8px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #1a2233;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-media {
+            min-height: 520px;
+            position: relative;
+            background-image:
+                linear-gradient(rgba(22, 18, 13, 0.35), rgba(22, 18, 13, 0.35)),
+                url("https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1800&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-title {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            margin: 0;
+            color: #f0f3dc;
+            font-size: clamp(72px, 11vw, 198px);
+            line-height: 0.92;
+            letter-spacing: -0.03em;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .cta-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 12px 0;
+            background: #121a2a;
+        }
+
+        .cta {
+            min-height: 58px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #121a2a;
+            color: var(--lime);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 18px;
+            font-size: 31px;
+            font-weight: 500;
+        }
+
+        .arrow {
+            color: #57e584;
+            font-size: 35px;
+        }
+
+        @media (max-width: 1100px) {
+            .nav {
+                grid-template-columns: 1fr;
+                height: auto;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .brand,
+            .actions {
+                justify-self: start;
+            }
+
+            .links {
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            .cta-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero-media {
+                min-height: 360px;
+            }
+
+            .cta-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="nav">
+            <div class="brand">Handshake</div>
+
+            <nav class="links" aria-label="Primary">
+                <a href="#">Hire now</a>
+                <a href="#">Find a job</a>
+                <a href="#">Career centers</a>
+                <a href="#">Handshake AI</a>
+                <a href="#">Research</a>
+            </nav>
+
+            <div class="actions">
+                <button class="btn btn-login">Log in</button>
+                <button class="btn btn-signup">Sign up</button>
+            </div>
+        </header>
+
+        <section class="hero" aria-label="Hero">
+            <div class="hero-media">
+                <h1 class="hero-title">Grow Your<br />Career</h1>
+            </div>
+
+            <div class="cta-row">
+                <div class="cta"><span>Find a job</span><span class="arrow">→</span></div>
+                <div class="cta"><span>Find AI work</span><span class="arrow">→</span></div>
+                <div class="cta"><span>Hire now</span><span class="arrow">→</span></div>
+                <div class="cta"><span>Train your model</span><span class="arrow">→</span></div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
